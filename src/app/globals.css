@@ -422,3 +422,52 @@ footer nav {
 .hidden {
   display: none;
 }
+@media (min-width: 1024px) {
+  .home-welcome {
+    text-align: center;
+  }
+
+  .home-searchbox .search-box-wrapper {
+    width: 50%;
+    margin-inline: auto;
+  }
+
+  .home-welcome p {
+    font-size: 18px;
+  }
+
+  .home-welcome h1 {
+    font-size: 32px;
+  }
+
+  .home-products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+  }
+
+  .home-product img {
+    width: 100%;
+    height: auto;
+    max-width: 240px;
+    height: 240px;
+    margin-inline: auto;
+  }
+  .home-section-title {
+    margin-bottom: 24px;
+  }
+
+  .product-title,
+  .product-price,
+  .home-section-title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .product-price {
+    font-weight: 700;
+  }
+  .section-body {
+    margin-bottom: 120px;
+  }
+}
