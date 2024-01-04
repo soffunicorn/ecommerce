@@ -37,31 +37,34 @@ const formattedName = (name: string): string => {
   return subIndx !== -1 ? name.substring(0, subIndx + 2) : name;
 };
 
-const showMoreDescription = (element: HTMLSpanElement) => {
+const showMoreDescription = (element: HTMLSpanElement, fullInfo: string) => {
   const info = document.querySelector(".pdp-description");
 
   if (info) {
+    info.textContent = fullInfo;
     info.classList.remove("ellipsis");
     element.classList.add("hidden");
   }
 };
 
 const formattedInfo = (info: string) => {
-  const infoLength = info.length;
-  const shouldShowMore = infoLength > MAX_INFO_LENGTH;
+  if (info.length < MAX_INFO_LENGTH) {
+    return <p className="pdp-description">{info}</p>;
+  }
+
+  const formattedInfo = info.substring(0, MAX_INFO_LENGTH);
+
   return (
     <div className="pdp-description-wrapper">
-      <p className={`pdp-description ${shouldShowMore ? "ellipsis" : ""}`}>
-        {info}
-      </p>
-      {shouldShowMore && (
+      <p className="pdp-description transitioned">
+        {`${formattedInfo} ... `}
         <span
           className="pdp-read-more"
-          onClick={(e) => showMoreDescription(e.currentTarget)}
+          onClick={(e) => showMoreDescription(e.currentTarget, info)}
         >
           Read More
         </span>
-      )}
+      </p>
     </div>
   );
 };

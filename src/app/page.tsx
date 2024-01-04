@@ -118,7 +118,7 @@ export default function Home() {
             <li>
               <a href="#">
                 <Image
-                  src="/icons/bag.svg"
+                  src="/icons/bag-alert.svg"
                   width="24"
                   height="24"
                   alt="your purchases"

@@ -345,13 +345,8 @@ footer nav {
   margin-bottom: 24px;
 }
 
-.pdp-description.ellipsis {
-  overflow-wrap: break-word;
-  max-height: 96px;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.pdp-description.transitioned {
+  transition: all 0.3s ease-out;
 }
 
 .pdp-read-more {
@@ -393,11 +388,12 @@ footer nav {
   align-items: center;
   background: #fff;
   border-radius: 12px;
-  border: 0.8px solid var(--Primary-Color, #ff9f24);
+  border: 0.8px solid var(--Main-Orange, #ff9f24);
   width: 54px;
   height: 54px;
   flex-shrink: 0;
   margin-right: 24px;
+  color: var(--Main-Orange);
 }
 
 .pdp-cart-btn {
